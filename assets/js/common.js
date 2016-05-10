@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sample from './sample';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Menu from './component/menu';
+import Grid from './component/grid';
+import Footer from './component/footer';
 
-const test = 10;
-console.log(test);
-
-class Test extends React.Component {
-  render() {
-    return(
-      <div>
-      <Sample />
-      </div>
-    )
-  }
-}
+const App = () => (
+  <MuiThemeProvider muiTheme={getMuiTheme()}>
+  <section>
+    <Menu />
+    <Grid />
+    <Footer />
+  </section>
+  </MuiThemeProvider>
+);
 
 ReactDOM.render(
-  <Test />,
+  <App />,
   document.getElementById('app')
 )
