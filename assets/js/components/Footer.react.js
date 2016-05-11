@@ -16,7 +16,7 @@ class Footer extends React.Component {
     }
 
     let completed = 0;
-    for (var key in allTodos) {
+    for (let key in allTodos) {
       if (allTodos[key].complete) {
         completed++;
       }

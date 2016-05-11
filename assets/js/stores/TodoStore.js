@@ -30,6 +30,7 @@ const destroyCompleted = () => {
 }
 
 const TodoStore = assign({}, EventEmitter.prototype, {
+
   areAllComplete: () => {
     for (let id in _todos) {
       if (!_todos[id].complete) {
@@ -39,13 +40,11 @@ const TodoStore = assign({}, EventEmitter.prototype, {
     return true;
   },
   getAll: () => _todos,
-  /* 何故かthisのスコープが合わない */
   emitChange: function() {
     this.emit(CHANGE_EVENT)
   },
-  /* 何故かthisのスコープが合わない */
   addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback);
+    this.on(CHANGE_EVENT, callback)
   },
   removeChangeListener: callback => this.removeListener(CHANGE_EVENT, callback)
 });
