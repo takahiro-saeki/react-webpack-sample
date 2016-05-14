@@ -30,8 +30,10 @@
     "react-addons-css-transition-group": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-loader": "^2.4.0",
+    "react-redux": "^4.4.5",
     "react-tap-event-plugin": "^1.0.0",
     "react-tween-state": "^0.1.5",
+    "redux": "^3.5.2",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }
