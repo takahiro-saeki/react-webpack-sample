@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_TEXT, CLEAR_TEXT } from './actions';
+import { ADD_TEXT, CLEAR_TEXT, REDUX_TEST } from './actions';
 
 /*
 Reducer:
@@ -31,6 +31,13 @@ let text = (state = initialState, action) => {
     case CLEAR_TEXT:
     // CLEAT_TEXTアクションが来た場合には空の配列を返して state を初期化する
     return []
+    case REDUX_TEST:
+    return [
+      {
+        id: 666,
+        text: 'hogeee'
+      }
+    ]
     default:
     return state
   }

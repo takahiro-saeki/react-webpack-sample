@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 /* Action Creatorのインポート */
-import { addText, clearText } from './actions'
+import { addText, clearText, reduxTest } from './actions'
 
 /*
 View (Reactコンポーネント):
@@ -21,6 +21,7 @@ class App extends Component {
       <input type='text' ref='input' /><br/>
       <button onClick={(e) => this.onAddBtnClicked(e)}   >Add</button>
       <button onClick={(e) => this.onClearBtnClicked(e)} >Clear</button>
+      <button onClick={(e) => this.onTestBtnClicked(e)} >Test</button>
       <ul>
       {
         //state中のオブジェクトをループさせて<li>要素を描画。stateは selector() メソッドで指定しているものがpropsとして渡ってくる
@@ -51,6 +52,11 @@ onAddBtnClicked(e) {
 onClearBtnClicked(e) {
   // dispatchメソッドで ActionCreator であるclearText() メソッドをラップして呼び出すことによって state の変更を伝播
   this.props.dispatch(clearText())
+}
+
+onTestBtnClicked(e) {
+  this.props.dispatch(reduxTest())
+  console.log(this.props.state)
 }
 
 }

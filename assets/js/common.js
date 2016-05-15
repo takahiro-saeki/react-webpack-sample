@@ -17,7 +17,6 @@ Appコンポーネント (App.jsからインポート) をProviderコンポー�
 
 //createStore() メソッドで Store を生成する。
 let applicationStore = createStore(store);
-console.log(applicationStore)
 let rootElement = document.querySelector('#app');
 
 render (
